@@ -53,11 +53,14 @@ def identify_interregional_routes(routes):
 
 interregional_routes = identify_interregional_routes(routes)
 
+# falta uma função para tratar o "interregional_routes"
+# para evitar criar rotas desnecessárias
 def identify_routes_to_add(interregional_routes):
     route_to_add = []
     routes = list(interregional_routes)
     for index in range(len(routes)):
         route_to_add.append((routes[index][1], routes[(index+1) % len(routes)][0]))
+    print(f"Quantidade de rotas: {len(route_to_add)}")
     print(route_to_add)
 
 identify_routes_to_add(interregional_routes)
